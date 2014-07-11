@@ -10,6 +10,7 @@ Global Positioning System (GPS) services integrated in the application and event
 travel information.
 
 There are three projects
+
 1> Client Application
 This is an android application build with Android Java. It uses basic android features:
 - Android UI
