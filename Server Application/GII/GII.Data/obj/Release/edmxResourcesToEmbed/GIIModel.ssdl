@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GIIModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="GIIModelStoreContainer">
+    <EntitySet Name="City" EntityType="GIIModel.Store.City" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CoTraveler" EntityType="GIIModel.Store.CoTraveler" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Country" EntityType="GIIModel.Store.Country" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Photo" EntityType="GIIModel.Store.Photo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Place" EntityType="GIIModel.Store.Place" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Review" EntityType="GIIModel.Store.Review" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sector" EntityType="GIIModel.Store.Sector" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Segment" EntityType="GIIModel.Store.Segment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="GIIModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_City_Country" Association="GIIModel.Store.FK_City_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CoTraveler_User" Association="GIIModel.Store.FK_CoTraveler_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="CoTraveler" EntitySet="CoTraveler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Country_Capital_City" Association="GIIModel.Store.FK_Country_Capital_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Country" EntitySet="Country" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Photo_Place" Association="GIIModel.Store.FK_Photo_Place">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="Photo" EntitySet="Photo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Photo_User" Association="GIIModel.Store.FK_Photo_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Photo" EntitySet="Photo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Place_City" Association="GIIModel.Store.FK_Place_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Place" EntitySet="Place" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Place" Association="GIIModel.Store.FK_Review_Place">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Sector" Association="GIIModel.Store.FK_Review_Sector">
+      <End Role="Sector" EntitySet="Sector" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_User" Association="GIIModel.Store.FK_Review_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sector_User" Association="GIIModel.Store.FK_Sector_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Sector" EntitySet="Sector" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Segment_Destination_City" Association="GIIModel.Store.FK_Segment_Destination_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Segment" EntitySet="Segment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Segment_Origin_City" Association="GIIModel.Store.FK_Segment_Origin_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Segment" EntitySet="Segment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Segment_Sector" Association="GIIModel.Store.FK_Segment_Sector">
+      <End Role="Sector" EntitySet="Sector" />
+      <End Role="Segment" EntitySet="Segment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Segment_Segment" Association="GIIModel.Store.FK_Segment_Segment">
+      <End Role="Segment" EntitySet="Segment" />
+      <End Role="Segment1" EntitySet="Segment" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ZipCode" Type="int" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CoTraveler">
+    <Key>
+      <PropertyRef Name="CoTravelerId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CoTravelerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Relationship" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CapitalCityId" Type="int" />
+  </EntityType>
+  <EntityType Name="Photo">
+    <Key>
+      <PropertyRef Name="PhotoId" />
+    </Key>
+    <Property Name="PhotoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="image" Nullable="false" />
+    <Property Name="PlaceId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="UploadDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="PlaceId" />
+    </Key>
+    <Property Name="PlaceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+    <Property Name="XCoordinate" Type="float" />
+    <Property Name="YCoordinate" Type="float" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="ReviewId" />
+    </Key>
+    <Property Name="ReviewId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Rating" Type="float" />
+    <Property Name="Comment" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ReviewDate" Type="date" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="SegmentId" Type="int" />
+    <Property Name="PlaceId" Type="int" />
+    <Property Name="SectorId" Type="int" />
+  </EntityType>
+  <EntityType Name="Sector">
+    <Key>
+      <PropertyRef Name="SectorId" />
+    </Key>
+    <Property Name="SectorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OriginCityId" Type="int" Nullable="false" />
+    <Property Name="DestinationCityId" Type="int" Nullable="false" />
+    <Property Name="PlanDate" Type="date" Nullable="false" />
+    <Property Name="Cost" Type="float" Nullable="false" />
+    <Property Name="Distance" Type="float" />
+    <Property Name="NoOfSegments" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Completed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Segment">
+    <Key>
+      <PropertyRef Name="SegmentId" />
+    </Key>
+    <Property Name="SegmentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OriginCityId" Type="int" Nullable="false" />
+    <Property Name="DestinationCityId" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="Distance" Type="float" />
+    <Property Name="Cost" Type="float" />
+    <Property Name="SectorId" Type="int" />
+    <Property Name="ReviewId" Type="int" />
+    <Property Name="NextSegmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Street" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="int" />
+    <Property Name="NoOfTraveler" Type="int" />
+  </EntityType>
+  <Association Name="FK_City_Country">
+    <End Role="Country" Type="GIIModel.Store.Country" Multiplicity="1" />
+    <End Role="City" Type="GIIModel.Store.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CoTraveler_User">
+    <End Role="User" Type="GIIModel.Store.User" Multiplicity="1" />
+    <End Role="CoTraveler" Type="GIIModel.Store.CoTraveler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="CoTraveler">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Country_Capital_City">
+    <End Role="City" Type="GIIModel.Store.City" Multiplicity="0..1" />
+    <End Role="Country" Type="GIIModel.Store.Country" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Country">
+        <PropertyRef Name="CapitalCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Photo_Place">
+    <End Role="Place" Type="GIIModel.Store.Place" Multiplicity="0..1" />
+    <End Role="Photo" Type="GIIModel.Store.Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="PlaceId" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="PlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Photo_User">
+    <End Role="User" Type="GIIModel.Store.User" Multiplicity="0..1" />
+    <End Role="Photo" Type="GIIModel.Store.Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Place_City">
+    <End Role="City" Type="GIIModel.Store.City" Multiplicity="1" />
+    <End Role="Place" Type="GIIModel.Store.Place" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Place">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Place">
+    <End Role="Place" Type="GIIModel.Store.Place" Multiplicity="0..1" />
+    <End Role="Review" Type="GIIModel.Store.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="PlaceId" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="PlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Sector">
+    <End Role="Sector" Type="GIIModel.Store.Sector" Multiplicity="0..1" />
+    <End Role="Review" Type="GIIModel.Store.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sector">
+        <PropertyRef Name="SectorId" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_User">
+    <End Role="User" Type="GIIModel.Store.User" Multiplicity="1" />
+    <End Role="Review" Type="GIIModel.Store.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sector_User">
+    <End Role="User" Type="GIIModel.Store.User" Multiplicity="1" />
+    <End Role="Sector" Type="GIIModel.Store.Sector" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Sector">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Segment_Destination_City">
+    <End Role="City" Type="GIIModel.Store.City" Multiplicity="1" />
+    <End Role="Segment" Type="GIIModel.Store.Segment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Segment">
+        <PropertyRef Name="DestinationCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Segment_Origin_City">
+    <End Role="City" Type="GIIModel.Store.City" Multiplicity="1" />
+    <End Role="Segment" Type="GIIModel.Store.Segment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Segment">
+        <PropertyRef Name="OriginCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Segment_Sector">
+    <End Role="Sector" Type="GIIModel.Store.Sector" Multiplicity="0..1" />
+    <End Role="Segment" Type="GIIModel.Store.Segment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sector">
+        <PropertyRef Name="SectorId" />
+      </Principal>
+      <Dependent Role="Segment">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Segment_Segment">
+    <End Role="Segment" Type="GIIModel.Store.Segment" Multiplicity="1" />
+    <End Role="Segment1" Type="GIIModel.Store.Segment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Segment">
+        <PropertyRef Name="SegmentId" />
+      </Principal>
+      <Dependent Role="Segment1">
+        <PropertyRef Name="SegmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

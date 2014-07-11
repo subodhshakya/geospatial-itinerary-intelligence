@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="GIIContext-Web.config Connection String" description="GIIContext Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/GIIModel.csdl|res://*/GIIModel.ssdl|res://*/GIIModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=SUBODH-PC\MICROSOFTSQL;initial catalog=GII;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\subodh\\Documents\\visual\ studio\ 2012\\Projects\\GII\\GII\.Web\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GIIContext']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".EditProfile" >
+
+ 	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_firstName"
+        android:text="@string/tv_firstName" />   
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_middleName"
+        android:text="@string/tv_middleName" 
+        android:layout_below="@+id/tv_firstName" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_lastName"
+        android:text="@string/tv_lastName"
+        android:layout_below="@+id/tv_middleName" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_userName"
+        android:text="@string/tv_userName"
+        android:layout_below="@+id/tv_lastName" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_password"
+        android:text="@string/tv_password"
+        android:layout_below="@+id/tv_userName" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_street"
+        android:text="@string/tv_street" 
+        android:layout_below="@+id/tv_password"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_city"
+        android:text="@string/tv_city"
+        android:layout_below="@+id/tv_street" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_zip"
+        android:text="@string/tv_zip"
+        android:layout_below="@+id/tv_street"
+        android:layout_toRightOf="@id/tv_city" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_state"
+        android:text="@string/tv_state"
+        android:layout_below="@+id/tv_city" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_country"
+        android:text="@string/tv_country" 
+        android:layout_below="@+id/tv_zip"
+        android:layout_toRightOf="@id/tv_state"/>  
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_state"
+        android:text="@string/btn_update" 
+        android:onClick="update">
+    </Button>
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_zip"
+        android:layout_toRightOf="@id/btn_update"
+        android:text="@string/btn_cancel" 
+        android:onClick="cancel">
+    </Button>
+
+</RelativeLayout>

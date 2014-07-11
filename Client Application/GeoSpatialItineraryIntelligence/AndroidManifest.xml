@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.uah.geospatialitineraryintelligence"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="13"
+        android:targetSdkVersion="19" />
+
+    <permission
+        android:name="com.uah.geospatialitineraryintelligence.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.uah.geospatialitineraryintelligence.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--
+     The following two permissions are not required to use
+     Google Maps Android API v2, but are recommended.
+    -->
+   <!-- <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/> -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Google API KEY -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBP3gfPKgc0tZRJvkkwtIPQWcfMfRGNa2Q" />
+        <!-- android:value="AIzaSyBJRyjQ5OQOqPffANYiqN_7_Pjt8wcdTuU" /> -->
+
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.DisplayMessageActivity"
+            android:label="@string/title_activity_display_message" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.ItemListActivity"
+            android:label="@string/title_item_list" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName="com.uah.geospatialitineraryintelligence.ItemListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ItemListActivity" />
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.PlanActivity"
+            android:label="@string/title_activity_plan" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.TravelActivity"
+            android:label="@string/title_activity_travel" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.SignUpActivity"
+            android:label="@string/title_activity_sign_up" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.DetailsActivity"
+            android:label="@string/title_activity_details" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.MapsActivity"
+            android:label="@string/title_activity_map" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.EditTravelActivity"
+            android:label="@string/title_activity_editTravel" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.PlaceSearchActivity"
+            android:label="@string/title_activity_placeSearch" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.SearchActivity"
+            android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.ReviewSectorActivity"
+            android:label="@string/title_activity_review_sector" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.CoTravelerActivity"
+            android:label="@string/title_activity_cotraveler" >
+        </activity>
+        <activity
+            android:name="com.uah.geospatialitineraryintelligence.ProfileActivity"
+            android:label="@string/title_activity_profile" >
+        </activity>
+    </application>
+
+</manifest>

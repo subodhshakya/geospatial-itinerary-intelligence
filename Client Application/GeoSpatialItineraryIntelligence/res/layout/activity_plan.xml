@@ -1,0 +1,188 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:windowSoftInputMode="adjustPan|adjustResize"
+    tools:context=".PlanActivity" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/startCityText"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/start_city"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/endCityText"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/end_city"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/travelDate"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05"
+            android:ems="10"
+            android:hint="Start On"
+            android:singleLine="false"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/travelDateMM"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="MM"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/dash1"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="-"
+            android:singleLine="false"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/travelDateDD"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="DD"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/dash2"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="-"
+            android:singleLine="false"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/travelDateYYYY"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="YYYY"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/sectorText"
+            android:layout_width="281dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Planned Itinerary:"
+            android:singleLine="false"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/sectorPlan"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Itinerary will appear here:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
+
+        <!--
+             <TextView
+            android:id="@+id/startDate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/blue"
+            android:textSize="20sp" />
+        -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="0.04"
+            android:onClick="btn_Click_Search"
+            android:text="@string/search" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="0.01"
+            android:onClick="btn_Click_AddSegment"
+            android:text="Add Segment" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="0.02"
+            android:onClick="btn_Click_Submit"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/coTravelerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="0.01"
+            android:onClick="btn_Click_Submit"
+            android:text="Co-Traveler" />
+
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Search Results->>"
+            android:singleLine="false"
+            android:textSize="12sp" />
+    <ListView
+        android:id="@+id/segments_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GII </string>
+    <string name="action_settings">Log Out</string>
+    <string name="gii">GII</string>
+    <string name="user_name">Username</string>
+    <string name="pass_word">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="edit_FirstName">First Name</string>
+    <string name="edit_MiddleName">Middle Name</string>
+    <string name="edit_LastName">Last Name</string>
+    <string name="edit_UserName">User Name/Email</string>
+    <string name="edit_Password">Password</string>
+    <string name="edit_ConfirmPassword">Confirm Password</string>
+    <string name="edit_Street">Street</string>
+    <string name="edit_City">City</string>
+    <string name="edit_Zip">Zip</string>
+    <string name="edit_State">State</string>
+    <string name="edit_Country">Country</string>
+    <string name="btn_SignUp">Sign Up</string>
+    <string name="buttonPlanItinearary">Plan Itinerary</string>
+    <string name="buttonMyProfile">My Profile</string>
+    <string name="btn_edit">Edit</string>
+    <string name="tv_firstName">First Name:</string>
+    <string name="tv_middleName">Middle Name:</string>
+    <string name="tv_lastName">Last Name:</string>
+    <string name="tv_userName">User Name/Email:</string>
+    <string name="tv_password">Password:</string>
+    <string name="tv_street">Street:</string>
+    <string name="tv_city">City:</string>
+    <string name="tv_zip">Zip:</string>
+    <string name="tv_state">State:</string>
+    <string name="tv_country">Country:</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_done">Done</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="tv_usernameDesc">User Name: </string>
+    <string name="tv_nameDesc">Name: </string>
+    <string name="tv_name">Name</string>
+    <string name="tv_streetDesc">Address: </string>
+    <string name="tv_cityZipDesc">City</string>
+    <string name="tv_cityZip">City Zip</string>
+    <string name="tv_stateCountryDesc">State</string>
+    <string name="tv_stateCountry">State Country</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_plan">Plan Itinerary</string>
+    <string name="start_city">Start City</string>
+    <string name="end_city">End City</string>
+    <string name="cost">Cost</string>
+    <string name="distance">Distance</string>
+    <string name="rating">Rating</string>
+    <string name="done">Done</string>
+    <string name="search">Lookup</string>
+    <string name="load_map">Load Map</string>
+    <string name="plan">Plan Itinerary</string>
+    <string name="btn_Plan">Plan Itinerary</string>
+    <string name="btn_MyProfile">My Profile</string>
+    <string name="btn_ListItinerary">History</string>
+    <string name="title_activity_main_activity_places">MainActivityPlaces</string>
+    <string name="title_activity_single_place">SinglePlaceActivity</string>
+    <string name="title_activity_places_map">PlacesMapActivity</string>
+    <string name="title_activity_travel">In-Travel</string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_details">Itinerary Details</string>
+    <string name="title_activity_map">GII Map</string>
+    <string name="title_activity_editTravel">Update Travel Info</string>
+    <string name="title_activity_placeSearch">Search Nearby Places</string>
+    <string name="title_activity_search">Search Itinerary</string>
+    <string name="title_activity_review_sector">Review Sector</string>
+    <string name="title_activity_cotraveler">Add Co-Traveler</string>
+    <string name="title_activity_profile">My Profile</string>
+    <string name="place_type_prompt">Select to Search</string>
+
+    <string-array name="place_type_arrays">
+        <item>airport</item>
+        <item>atm</item>
+        <item>bank</item>
+        <item>lodging</item>
+        <item>cafe</item>
+        <item>shopping_mall</item>
+        <item>police</item>
+        <item>subway_station</item>
+        <item>taxi_stand</item>
+    </string-array>
+
+</resources>

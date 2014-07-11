@@ -1,0 +1,8 @@
+C:\Users\subodh\Documents\Visual Studio 2012\Projects\GII\GII.Data\bin\Debug\GII.Data.exe.config
+C:\Users\subodh\Documents\Visual Studio 2012\Projects\GII\GII.Data\bin\Debug\GII.Data.exe
+C:\Users\subodh\Documents\Visual Studio 2012\Projects\GII\GII.Data\bin\Debug\GII.Data.pdb
+C:\Users\subodh\Documents\Visual Studio 2012\Projects\GII\GII.Data\bin\Debug\EntityFramework.dll
+C:\Users\subodh\Documents\Visual Studio 2012\Projects\GII\GII.Data\bin\Debug\EntityFramework.xml
+C:\Users\subodh\Documents\Visual Studio 2012\Projects\GII\GII.Data\obj\Debug\GII.Data.csprojResolveAssemblyReference.cache
+C:\Users\subodh\Documents\Visual Studio 2012\Projects\GII\GII.Data\obj\Debug\GII.Data.exe
+C:\Users\subodh\Documents\Visual Studio 2012\Projects\GII\GII.Data\obj\Debug\GII.Data.pdb
